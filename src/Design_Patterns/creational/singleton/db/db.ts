@@ -1,23 +1,22 @@
-let instance: DB;
+export class DB {
+  static instance: DB;
 
-class DB {
   static getInstance = () => {
-    return instance || new DB()
+    if (!DB.instance) {
+      DB.instance = new DB()
+    }
+    return DB.instance
   }
 
   create = () => {
-
   }
 
   read = () => {
-
   }
 
   update = () => {
-
   }
 
   delete = () => {
-    
   }
 }

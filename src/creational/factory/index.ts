@@ -1,7 +1,14 @@
 import { ShapeFactory, enShapeType } from "./shapeFactory/ShapeFactory";
 
-const myStar = ShapeFactory.CreateShape(enShapeType.Star)
-myStar.draw(50)
+const main = () => {
+  const shapes: IShape[] = [
+    ShapeFactory.CreateShape(enShapeType.Star),
+    ShapeFactory.CreateShape(enShapeType.Circle)
+  ]
 
-const myCircle = ShapeFactory.CreateShape(enShapeType.Circle)
-myCircle.draw(400)
+  for(const shape of shapes){
+    shape.draw(400)
+  }
+}
+
+main()

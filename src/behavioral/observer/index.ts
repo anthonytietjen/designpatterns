@@ -1,14 +1,19 @@
-import { ComponentA as Observer } from "./Observer"
+import { ObserverA } from "./ObserverA"
+import { ObserverB } from "./ObserverB"
+import { ComponentA } from "./ComponentA"
 import { ComponentB } from "./ComponentB"
-import { ComponentC } from "./ComponentC"
 
-const windowLoadedListener = () => {
-  const observer = new Observer(2, onAllComponentsRendered)
+const main = () => {
+  const observerA = new ObserverA(2, onAllComponentsRendered)
+  observerA.startObserving()
 
-  const componentB = new ComponentB()
+  const observerB = new ObserverB()
+  observerB.startObserving()
+
+  const componentB = new ComponentA()
   componentB.render()
 
-  const componentC = new ComponentC()
+  const componentC = new ComponentB()
   componentC.render()
 }
 
@@ -16,5 +21,4 @@ const onAllComponentsRendered = () => {
   console.log("All components rendered")
 }
 
-
-window.addEventListener('load', windowLoadedListener)
+main()

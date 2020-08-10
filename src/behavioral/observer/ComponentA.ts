@@ -1,7 +1,7 @@
-export class ComponentC {
+export class ComponentA {
   render() {
     setTimeout(() => {
       window.postMessage({ action: 'rendered' }, window.location.origin)
-    }, 1000)
+    }, 500)
   }
 }

@@ -1,10 +1,13 @@
-export class ComponentA {
+export class ObserverA {
   rendered = 0;
 
   constructor(
     private renderCount: number,
     private onAllComponentsRendered: () => void
   ) {
+  }
+
+  public startObserving = () => {
     window.addEventListener('message', (event) => {
       if (event.origin !== window.location.origin) {
         return

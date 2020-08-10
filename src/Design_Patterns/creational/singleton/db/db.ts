@@ -7,16 +7,4 @@ export class DB {
     }
     return DB.instance
   }
-
-  create = () => {
-  }
-
-  read = () => {
-  }
-
-  update = () => {
-  }
-
-  delete = () => {
-  }
 }

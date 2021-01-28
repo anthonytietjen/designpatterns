@@ -1,4 +1,7 @@
+import { IDB } from "./IDB";
+
 export class User {
-  constructor(private db: DB) {
+  constructor(private db: IDB) {
+    db.connect()
   }
 }

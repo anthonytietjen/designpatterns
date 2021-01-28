@@ -1,4 +1,10 @@
-export class DB {
+import { IDB } from "./IDB";
+
+export class DB implements IDB {
+  connect(): () => void {
+    throw new Error("Method not implemented.");
+  }
+  
   static instance: DB;
 
   public static getInstance = () => {
@@ -8,7 +14,4 @@ export class DB {
     return DB.instance
   }
 
-  public connect = () => {
-
-  }
 }
